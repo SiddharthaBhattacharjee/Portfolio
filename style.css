@@ -87,7 +87,7 @@ body{
     height: 200px;
     margin-left: 20px;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-bottom: 10px;
     border-style: solid;
     border-color: white;
@@ -216,6 +216,11 @@ body{
     height: 100px;
     margin-top: 54px;
     margin-bottom: 10px;
+}
+
+.curele:hover{
+    filter:invert(15%);
+  transform: translateY(-10px);
 }
 
 #projects{
