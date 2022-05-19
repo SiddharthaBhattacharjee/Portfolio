@@ -15,70 +15,34 @@
     <div id="container">
         <div id="nav">
             <ul id="navlis">
-                <li><a class="navele" onclick="scrollToNextDiv('header')">Home</a></li>
+                <li><a class="navele" onclick="scrollToNextDiv('particles-js')">Home</a></li>
                 <li><a class="navele" onclick="scrollToNextDiv('skillhead')">My Skills</a></li>
                 <li><a class="navele" onclick="scrollToNextDiv('projects')">Projects</a></li>
                 <li><a class="navele" href="mailto: siddharthabhatt2345@gmail.com">Contact</a></li>
             </ul>
         </div>
-        <div id="header">
-            <span id="sp1">
-                Hello World! I am<br>
-                <div id="nameContainer">
-                    <div id="mname">
+        <div id="particles-js">
+            <div id="header">
+                <span id="sp1">
+                    <spam id="hello">Hello World! It's me<br></spam>
+                    <div id="nameContainer">
+                        <div id="mname">
+                            SIDDHARTHA BHATTACHARJEE
+                        </div>
                     </div>
-                    <span class="input-cursor"></span>
-                </div>
-                A Student & Passionate Developer.
-            </span>
+                    <div id="iam">
+                        I am a 
+                        <span id="prof">
+                            Developer
+                        </span>
+                        <span class="input-cursor"></span>
+                    </div>
+                </span>
+            </div>
         </div>
-        <script>
-            toggle = true;
-            var i = 0;
-            var txt = "SIDDHARTHA BHATTACHARJEE";
-            j = txt.length;
-            var speed = 220;
-            function sleep(time) {
-                return new Promise((resolve) => setTimeout(resolve, time));
-            }
-            function typeWriter() {
-                text = txt;
-                if (i <= text.length) {
-                    document.getElementById("mname").innerHTML = text.substring(0, i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
-                else {
-                    if (j == txt.length || j == txt.length - 1) {
-                        sleep(2000).then(() => {
-                            setTimeout(typeWriter, speed);
-                            document.getElementById("mname").innerHTML = txt.substring(0, j);
-                            if (j == 0) {
-                                j = txt.length;
-                                i = 0;
-                            }
-                            j--;
-                        });
-                    }
-                    else {
-                        setTimeout(typeWriter, speed);
-                        document.getElementById("mname").innerHTML = txt.substring(0, j);
-                        if (j == 0) {
-                            j = txt.length;
-                            i = 0;
-                        }
-                        j--;
-                    }
-                }
-            }
-            function scrollToNextDiv(a) {
-                document.getElementById(a).scrollIntoView({
-                    behavior: 'smooth',
-                });
-            }
-            typeWriter();
-
-        </script>
+        <script src="particles.js-master/particles.js"></script>
+        <script src="/particles.js-master/demo/js/app.js"></script>
+        <script src="./script.js"></script>
         <div id="superBox">
             <div id="box1">
                 <div id="pfpCnt">
@@ -133,28 +97,7 @@
                     </div>
                 </div>
 
-                <script>
-                    var acc = document.getElementsByClassName("accordion");
-                    var i;
-
-                    for (i = 0; i < acc.length; i++) {
-                        acc[i].addEventListener("click", function () {
-                            this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
-                            if (panel.style.maxHeight) {
-                                panel.style.maxHeight = null;
-                            } else {
-                                let active = document.querySelectorAll(".accordion-div .accordion.active");
-                                for (let j = 0; j < active.length; j++) {
-                                    active[j].classList.remove("active");
-                                    active[j].nextElementSibling.style.maxHeight = null;
-                                }
-                                this.classList.toggle("active");
-                                panel.style.maxHeight = panel.scrollHeight + "px";
-                            }
-                        });
-                    }
-                </script>
+                <script src="./accordianScript.js"></script>
             </div>
         </div>
         <div id="bodyy">
