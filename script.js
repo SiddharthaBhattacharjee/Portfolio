@@ -47,6 +47,8 @@ function scrollToNextDiv(a) {
 }
 
 
+
+
 toggle = true;
 var i = 0;
 var txt = "Student";
@@ -58,7 +60,7 @@ j = txt.length;
 j1 = txt1.length;
 j2 = txt2.length;
 j3 = txt3.length;
-var speed = 220;
+var speed = 200;
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -73,7 +75,7 @@ function typeWriter() {
         }
         else {
             if (j == text.length || j == text.length - 1) {
-                sleep(1000).then(() => {
+                sleep(900).then(() => {
                     setTimeout(typeWriter, speed);
                     document.getElementById("prof").innerHTML = text.substring(0, j);
                     if (j == 0) {
@@ -110,7 +112,7 @@ function typeWriter() {
         }
         else {
             if (j1 == text.length || j1 == text.length - 1) {
-                sleep(1000).then(() => {
+                sleep(900).then(() => {
                     setTimeout(typeWriter, speed);
                     document.getElementById("prof").innerHTML = text.substring(0, j1);
                     if (j1 == 0) {
@@ -147,7 +149,7 @@ function typeWriter() {
         }
         else {
             if (j2 == text.length || j2 == text.length - 1) {
-                sleep(1000).then(() => {
+                sleep(900).then(() => {
                     setTimeout(typeWriter, speed);
                     document.getElementById("prof").innerHTML = text.substring(0, j2);
                     if (j2 == 0) {
@@ -184,7 +186,7 @@ function typeWriter() {
         }
         else {
             if (j3 == text.length || j3 == text.length - 1) {
-                sleep(1000).then(() => {
+                sleep(900).then(() => {
                     setTimeout(typeWriter, speed);
                     document.getElementById("prof").innerHTML = text.substring(0, j3);
                     if (j3 == 0) {
