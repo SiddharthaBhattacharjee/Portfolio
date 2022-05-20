@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 body{
     margin: 0;
@@ -7,35 +8,77 @@ body{
     background-image: url(./assets/bg66.jpg);
     background-attachment: fixed;
     overflow-x: hidden;
+    height: 100%;
 }
 #nav{
     background-color: aqua;
     height : 50px;
     width : 100%;
     position: fixed;
+    scroll-margin-top: 5rem;
+}
+
+#particles-js {
+  background-image: url(./assets/bg10.jpg);
+  background-size: 100% 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+}
+
+
+#mouse{
+  max-width: 30px;
+  max-width: 30px;
+  position: absolute;
+  margin-top: 270px;
+  animation: jiggle 1s infinite alternate linear;
+  cursor: pointer;
+}
+
+@keyframes jiggle{
+  0% {
+    margin-top: 250px
+  }
+  100% {
+    margin-top: 270px;
+  }
 }
 
 #header{
-    background-image: url(./assets/bg77.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    line-height: 350px;
-    height: 320px;
-    width: 100%;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    color: white;
+    position : absolute;
 }
 
 #sp1{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 #mname{
-    font-size: 40px;
-    
+    font-size: 50px;
+    animation: slideIn 2s linear;
+}
+
+/* animate mname to pop in */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    font-size: 0;
+  }
+  100% {
+    opacity: 1;
+    font-size: 50px;
+  }
 }
 
 #nameContainer{
@@ -43,11 +86,36 @@ body{
     border-right: 0;
     border-left: 0;
     margin : 5px;
-    width: 650px;
+    width: 830px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: openup 2s linear;
+}
+
+@keyframes openup {
+  0% {
+    opacity: 0.6;
+    height: 5px;
+  }
+  100% {
+    opacity: 1;
+    height: 50px;
+  }
+}
+
+#hello, #iam{
+  animation: phasein 2s linear;
+}
+
+@keyframes phasein{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes blink {
@@ -60,53 +128,100 @@ body{
 .input-cursor {
     display: inline-block;
     width: 2px;
-    height: 42px;
-    background-color: black;
-    margin-left: 4px;
+    height: 16px;
+    background-color: white;
+    margin-left: 0.5px;
     animation: blink .6s linear infinite alternate;
 }
 
 
 #superBox{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  gap:0;
 }
 
 #box1{
-    background-color: rgb(220, 215, 222);
-    height: 423px;
-    width: 50%;
-    display: flex;
-    justify-content:stretch;
+    display:inline-block;
+    background-color: #f9fdd1;
+    height: 900px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    scroll-margin-top: 3.1rem;
 }
+
+#perinfo{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+#picont{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top: 20px;
+}
+
+#abts{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  width: 900px;
+  height: 80px;
+}
+
+.abth{
+  margin-bottom: 15px;
+  font-size: 29px;
+  font-weight: bold;
+  border-style: solid;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 2px;
+  cursor: default;
+}
+
+.abt{
+  font-size: large;
+}
+
+.abt :hover{
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 3px #000000;
+  /* background colour gradient effect */
+  background: -webkit-linear-gradient(left, #f9fdd1 0%,#f9fdd1 25%, rgb(215, 199, 130) 100%);
+}
+
 
 #pfprnd{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-left: 20px;
-    margin-right: auto;
-    margin-top: 80px;
+    width: 300px;
+    height: 300px;
+    margin-right: 40px;
     margin-bottom: 10px;
     border-style: solid;
     border-color: white;
-    border-width: 6px;
+    border-width: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#bdata{
+/* #bdata{
     width: 50%;
     text-align: center;
     line-height: 5px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 20px;
-}
+} */
 
 #box2{
-    background-color: rgb(223, 210, 150);
+    display:inline-block;
+    background-color: rgb(220, 215, 222);
     height: 423px;
-    width: 50%;
+    width: 100%;
     text-align: center;
     line-height: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -115,9 +230,14 @@ body{
 #abtme{
     margin-top : 20px;
 }
+
+#abtme2{
+    margin-top : 50px;
+}
 #abtbdy{
-    margin-right: 3px;
-    margin-left: 3px;
+    max-width : 75%;
+    margin: auto;
+    margin-top: 20px;
 }
 #bodyy{
     align-items: center;
@@ -136,6 +256,7 @@ body{
 }
 
 #skillhead{
+    scroll-margin-top: 5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 30px;
     padding-top: 8px;
@@ -248,7 +369,7 @@ body{
 
 
 .accordion {
-    background-color: #eee;
+    background-color: rgb(255, 255, 255);
     color: #444;
     cursor: pointer;
     padding: 16px;
@@ -266,10 +387,12 @@ body{
   .active {
     background-color: rgb(7, 7, 7);
     color: rgb(255, 255, 255);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .accordion:hover{
-    background-color: rgb(182, 182, 182);
+    background-color: rgba(232, 232, 232, 0.589);
     color: rgb(0, 0, 0);
   }
   
@@ -279,11 +402,13 @@ body{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    width: 69.67%;
+    width: 70.6%;
     margin: auto;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 14px;
     border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   .accordion:after {
@@ -303,6 +428,8 @@ body{
       margin-top: 20px;
       align-items: center;
       align-content: center;
+      max-width: 60%;
+      margin: auto;
   }
 
 

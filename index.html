@@ -15,88 +15,60 @@
     <div id="container">
         <div id="nav">
             <ul id="navlis">
-                <li><a class="navele" onclick="scrollToNextDiv('header')">Home</a></li>
+                <li><a class="navele" onclick="scrollToNextDiv('particles-js')">Home</a></li>
                 <li><a class="navele" onclick="scrollToNextDiv('skillhead')">My Skills</a></li>
                 <li><a class="navele" onclick="scrollToNextDiv('projects')">Projects</a></li>
                 <li><a class="navele" href="mailto: siddharthabhatt2345@gmail.com">Contact</a></li>
             </ul>
         </div>
-        <div id="header">
-            <span id="sp1">
-                Hello World! I am<br>
-                <div id="nameContainer">
-                    <div id="mname">
+        <div id="particles-js">
+            <div id="header">
+                <span id="sp1">
+                    <spam id="hello">Hello World! It's me<br></spam>
+                    <div id="nameContainer">
+                        <div id="mname">
+                            SIDDHARTHA BHATTACHARJEE
+                        </div>
                     </div>
-                    <span class="input-cursor"></span>
-                </div>
-                A Student & Passionate Developer.
-            </span>
+                    <div id="iam">
+                        I am a 
+                        <span id="prof">
+                            Developer
+                        </span>
+                        <span class="input-cursor"></span>
+                    </div>
+                    <div id="void"></div>
+                    
+                </span>
+            </div>
+            <img src="./assets/mouse.png" alt = "down" id="mouse" onclick="scrollToNextDiv('box1')">
         </div>
-        <script>
-            toggle = true;
-            var i = 0;
-            var txt = "SIDDHARTHA BHATTACHARJEE";
-            j = txt.length;
-            var speed = 220;
-            function sleep(time) {
-                return new Promise((resolve) => setTimeout(resolve, time));
-            }
-            function typeWriter() {
-                text = txt;
-                if (i <= text.length) {
-                    document.getElementById("mname").innerHTML = text.substring(0, i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
-                else {
-                    if (j == txt.length || j == txt.length - 1) {
-                        sleep(2000).then(() => {
-                            setTimeout(typeWriter, speed);
-                            document.getElementById("mname").innerHTML = txt.substring(0, j);
-                            if (j == 0) {
-                                j = txt.length;
-                                i = 0;
-                            }
-                            j--;
-                        });
-                    }
-                    else {
-                        setTimeout(typeWriter, speed);
-                        document.getElementById("mname").innerHTML = txt.substring(0, j);
-                        if (j == 0) {
-                            j = txt.length;
-                            i = 0;
-                        }
-                        j--;
-                    }
-                }
-            }
-            function scrollToNextDiv(a) {
-                document.getElementById(a).scrollIntoView({
-                    behavior: 'smooth',
-                });
-            }
-            typeWriter();
-
-        </script>
+        <script src="./particles.js-master/particles.js"></script>
+        <script src="./particles.js-master/demo/js/app.js"></script>
+        <script src="./script.js"></script>
         <div id="superBox">
             <div id="box1">
-                <div id="pfpCnt">
-                    <img src="./assets/pfp.jpg" alt="My Profile Picture" id="pfprnd">
+                <div id="perinfo">About Me</div>
+                <div id="picont">
+                    <div id="abts">
+                        <div class="abt">
+                            <div class="abth">Name</div>
+                            Siddhartha Bhattacharjee
+                        </div>
+                        <div class="abt">
+                            <div class="abth">Mail</div>
+                            siddharthabhatt2345@gmail.com
+                        </div>
+                        <div class="abt">
+                            <div class="abth">Contact Number</div>
+                            +91 7002744892
+                        </div>
+                    </div>
+                    <div id="pfpCnt">
+                        <img src="./assets/pfp.jpg" alt="My Profile Picture" id="pfprnd">
+                    </div>
                 </div>
-                <div id="bdata">
-                    <h3><u>PERSONAL INFO</u></h3><br>
-                    <h4>Name : </h4> <big>Siddhartha Bhattacharjee</big><br>
-                    <h4>Email : </h4> siddharthabhatt2345@gmail.com<br>
-                    <h4>Phone : </h4> +91-7002744892<br>
-                    <h4>Website : </h4> https://siddharthabhattacharjee.github.io/Portfolio/ <br>
-                    <h5>Address : </h5> Narayan Kuthir, Redcross Road, Ward No.12,<br><br><br><br>
-                    Karimganj-788710, Assam
-
-                </div>
-            </div>
-            <div id="box2">
-                <h3 id="abtme"><u>ABOUT ME</u></h3>
+                <h3 id="abtme">A General Introduction</h3>
                 <p id="abtbdy">
                     I am 18 Years old Passionate Programmer and a Dedicated Developer, I love to engage with tech clubs
                     and
@@ -106,6 +78,7 @@
                     My emphasis is on personal growth and learning, I am always looking for new ways to improve myself.
                     I value consistancy and hardwork, and try to learn something new every day.
                 </p>
+                <h3 id="abtme2">More About Me</h3>
                 <div class="accordion-div">
                     <button class="accordion">My Area Of Strengths</button>
                     <div class="panel">
@@ -132,30 +105,10 @@
                         </p>
                     </div>
                 </div>
-
-                <script>
-                    var acc = document.getElementsByClassName("accordion");
-                    var i;
-
-                    for (i = 0; i < acc.length; i++) {
-                        acc[i].addEventListener("click", function () {
-                            this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
-                            if (panel.style.maxHeight) {
-                                panel.style.maxHeight = null;
-                            } else {
-                                let active = document.querySelectorAll(".accordion-div .accordion.active");
-                                for (let j = 0; j < active.length; j++) {
-                                    active[j].classList.remove("active");
-                                    active[j].nextElementSibling.style.maxHeight = null;
-                                }
-                                this.classList.toggle("active");
-                                panel.style.maxHeight = panel.scrollHeight + "px";
-                            }
-                        });
-                    }
-                </script>
+                <script src="./accordianScript.js"></script>
+                
             </div>
+
         </div>
         <div id="bodyy">
             <div id="content">
@@ -282,36 +235,7 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                // Next/previous controls
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                // Thumbnail image controls
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    let i;
-                    let slides = document.getElementsByClassName("mySlides");
-                    let dots = document.getElementsByClassName("dot");
-                    if (n > slides.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = slides.length }
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active1", "");
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active1";
-                }
-            </script>
+            <script src="./slideshow.js"></script>
         </div>
         <div id="footer">
             <b><big style="font-size:x-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: white; margin-top: 10px;">Follow Me</big></b>
